@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Notfound from "./components/Notfound";
 import SignUp from "./components/SignUp";
+import LandingPage from "./DashBoard/LandingPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="*" element={<Notfound />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/landingpage" element={<LandingPage />} />
       </Routes>
     </>
   );

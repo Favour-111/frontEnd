@@ -21,7 +21,7 @@ function Home() {
                 <button className="landingBtn">get started</button>
               </div>
             </div>
-            <div className="sections col-md-6 text-light">
+            <div className="formBody col-md-6 text-light">
               <div className="contents text-dark mx-5 bg-light rounded p-3">
                 <p className="fs-5 fw-bold">
                   sign into your dashBoard already have an account

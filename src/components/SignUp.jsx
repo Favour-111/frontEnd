@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router";
+
 function SignUp() {
   const [user, setUser] = useState({
     name: "",
@@ -20,18 +22,20 @@ function SignUp() {
     if (user.name === "" || user.email === "" || user.password === "") {
       toast.error("please input field");
     } else {
-      const response = await axios.post("http://localhost:5000/admin", user);
+      const response = await axios.post("http://localhost:4000/admin", user);
       console.log(response);
       if (response.data.success) {
+        navigate("/landingpage");
         toast.success(response.data.msg);
       } else {
         toast.error(response.data.msg);
       }
     }
   };
+  const navigate = useNavigate();
   return (
     <div>
-      <div className="w-50 m-auto p-4 shadow mt-4">
+      <div className="formBody m-auto p-4 shadow mt-4">
         <form onSubmit={handleSubmit}>
           <p className="text-capitalize text-center fw-light fs-2">
             registration form
@@ -75,9 +79,10 @@ function SignUp() {
               onChange={handleForm}
             />
           </div>
+
           <div class="mb-3 form-check"></div>
           <button type="submit" class="btn btn-primary">
-            Submit
+            Register
           </button>
         </form>
       </div>
